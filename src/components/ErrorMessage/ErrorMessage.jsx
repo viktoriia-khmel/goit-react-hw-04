@@ -1,12 +1,11 @@
-import { Toaster } from 'react-hot-toast';
 
 
 const ErrorMessage = () => {
   
   return (
     <div>
+      <p>Something went wrong! Please, try again...</p>
       
-      <Toaster />
     </div>
   )
 }

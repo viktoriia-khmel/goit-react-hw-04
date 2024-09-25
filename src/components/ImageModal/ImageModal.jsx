@@ -1,26 +1,19 @@
 import Modal from 'react-modal';
+import { SlClose } from "react-icons/sl";
+import s from './ImageModal.module.css'
 
-const ImageModal = () => {
-  return (
+const ImageModal = ({ isOpen, onRequestClose, image }) => {
+    return (
     <div>
-      <button onClick={openModal}>Open Modal</button>
       <Modal
-        isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
-        onRequestClose={closeModal}
-        style={customStyles}
-        contentLabel="Example Modal"
+        isOpen={isOpen}
+          onRequestClose={onRequestClose}
+          
+          className={s.modal}
+      ClassName={s.overlay}
       >
-        <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Hello</h2>
-        <button onClick={closeModal}>close</button>
-        <div>I am a modal</div>
-        <form>
-          <input />
-          <button>tab navigation</button>
-          <button>stays</button>
-          <button>inside</button>
-          <button>the modal</button>
-        </form>
+        <button onClick={onRequestClose} className={s.close_btn}><SlClose /></button>
+        <img src={image} alt="" className={s.modal_image}/>
       </Modal>
     </div>
   )
